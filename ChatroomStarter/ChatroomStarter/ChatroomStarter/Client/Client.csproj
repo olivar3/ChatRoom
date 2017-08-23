@@ -44,11 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
-<<<<<<< HEAD
-    <Compile Include="notifications.cs" />
-=======
-    <Compile Include="Dictionary.cs" />
->>>>>>> 1de0fac97d1bc21b4cb613d41f3aa6ba324822be
+    <Compile Include="MessagesInWaiting.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI.cs" />
