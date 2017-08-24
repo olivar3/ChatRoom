@@ -15,16 +15,16 @@ namespace Server
         TcpListener server;
         public Server()
         {
-            server = new TcpListener(IPAddress.Parse("12.145.176.90"), 9999);
+            server = new TcpListener(IPAddress.Parse("12.145.176.90"), 1900);
             server.Start();
         }
-        public void Run()
+        public void Run(Client client)
         {
             AcceptClient();
             string message = client.Recieve();
             Respond(message);
         }
-        private void AcceptClient()
+        private void AcceptClient(Client client)
         {
             TcpClient clientSocket = default(TcpClient);
             clientSocket = server.AcceptTcpClient();

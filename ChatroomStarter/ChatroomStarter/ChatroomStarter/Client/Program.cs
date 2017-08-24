@@ -10,7 +10,7 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            Client client = new Client("12.145.176.90", (//randomPort#);
+            Client client = new Client("12.145.176.90", 1900);
             client.Send();
             client.Recieve();
             Console.ReadLine();

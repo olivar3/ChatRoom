@@ -12,16 +12,23 @@ namespace Client
     {
         TcpClient clientSocket;
         NetworkStream stream;
-
-        public Client()
-        {
-
-        }
         public Client(string IP, int port)
         {
             clientSocket = new TcpClient();
             clientSocket.Connect(IPAddress.Parse(IP), port);
             stream = clientSocket.GetStream();
+        }
+        public void UserVerification(Server server)
+        {
+            if (clientSocket = server)
+            {
+                Console.WriteLine("You are now connected.");
+            }
+            else
+            {
+                Console.WriteLine("Please make sure you are connected to the correct network.");
+            }
+
         }
         public void Send()
         {
