@@ -6,7 +6,26 @@ using System.Threading.Tasks;
 
 namespace Client
 {
-    class Dictionary
+    public class Dictionary
     {
+        public static void Main(Client client)
+        {
+            Dictionary<string IP, int port> Dictionary =
+                new Dictionary<string IP, int port>();
+
+            Dictionary.AddToChat("User1", 1);
+            Dictionary.AddToChat("User2", 2);
+            Dictionary.AddToChat("User3", 3);
+        }
+        public static void UserVerification(Client client)
+        {
+            
+            if (client = server)
+            {
+                Console.WriteLine("You are now connected.");
+            }
+                
+            }
+        }
     }
 }

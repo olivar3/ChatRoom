@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Client
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Client client = new Client("127.0.0.1", 9999);
+            Client client = new Client("12.145.176.90", (//randomPort#);
             client.Send();
             client.Recieve();
             Console.ReadLine();

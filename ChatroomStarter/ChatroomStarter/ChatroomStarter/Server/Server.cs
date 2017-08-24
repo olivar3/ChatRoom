@@ -10,13 +10,12 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    class Server
+    public class Server
     {
-        public static Client client;
         TcpListener server;
         public Server()
         {
-            server = new TcpListener(IPAddress.Parse("127.0.0.1"), 9999);
+            server = new TcpListener(IPAddress.Parse("12.145.176.90"), 9999);
             server.Start();
         }
         public void Run()

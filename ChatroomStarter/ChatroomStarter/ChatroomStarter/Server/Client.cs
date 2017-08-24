@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    class Client
+    public class Client
     {
         NetworkStream stream;
         TcpClient client;

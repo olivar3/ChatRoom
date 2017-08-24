@@ -8,10 +8,15 @@ using System.Threading.Tasks;
 
 namespace Client
 {
-    class Client
+    public class Client
     {
         TcpClient clientSocket;
         NetworkStream stream;
+
+        public Client()
+        {
+
+        }
         public Client(string IP, int port)
         {
             clientSocket = new TcpClient();
