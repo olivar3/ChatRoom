@@ -10,12 +10,9 @@ namespace Server
     {
         public static void UserList(Client client)
         {
-            Dictionary <string IP, int port> Dictionary =
-                  new Dictionary<string IP, int port>();
+            Dictionary <string, Client> users =
+                  new Dictionary<string, Client>();
 
-            Dictionary.AddToChat("User1", 1);
-            Dictionary.AddToChat("User2", 2);
-            Dictionary.AddToChat("User3", 3);
         }
       
     }

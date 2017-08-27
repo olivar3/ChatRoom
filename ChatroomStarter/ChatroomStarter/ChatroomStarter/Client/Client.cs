@@ -15,32 +15,29 @@ namespace Client
         public Client(string IP, int port)
         {
             clientSocket = new TcpClient();
-            clientSocket.Connect(IPAddress.Parse(IP), port);
+            clientSocket.Connect(IPAddress.Parse(IP), 9999);
             stream = clientSocket.GetStream();
-        }
-        public void UserVerification(Server server)
-        {
-            if (clientSocket = server)
-            {
-                Console.WriteLine("You are now connected.");
-            }
-            else
-            {
-                Console.WriteLine("Please make sure you are connected to the correct network.");
-            }
-
         }
         public void Send()
         {
-            string messageString = UI.GetInput();
-            byte[] message = Encoding.ASCII.GetBytes(messageString);
-            stream.Write(message, 0, message.Count());
+            while (true)
+            {
+                string messageString = UI.GetInput();
+                byte[] message = Encoding.ASCII.GetBytes(messageString);
+                stream.Write(message, 0, message.Count());
+                Console.WriteLine(message);
+            }
+            
         }
-        public void Recieve()
+        public void Receive()
         {
-            byte[] recievedMessage = new byte[256];
-            stream.Read(recievedMessage, 0, recievedMessage.Length);
-            UI.DisplayMessage(Encoding.ASCII.GetString(recievedMessage));
+            while (true)
+            {
+                byte[] receivedMessage = new byte[256];
+                stream.Read(receivedMessage, 0, receivedMessage.Length);
+                UI.DisplayMessage(Encoding.ASCII.GetString(receivedMessage));
+            }
+           
         }
     }
 }

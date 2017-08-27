@@ -12,25 +12,35 @@ namespace Server
 {
     public class Server
     {
+        Client client;
         TcpListener server;
         public Server()
         {
-            server = new TcpListener(IPAddress.Parse("12.145.176.90"), 1900);
+            server = new TcpListener(IPAddress.Parse("127.0.0.1"), 9999);
             server.Start();
         }
-        public void Run(Client client)
+        public void Run()
         {
             AcceptClient();
-            string message = client.Recieve();
+            string message = client.Receive();
             Respond(message);
         }
-        private void AcceptClient(Client client)
+        private void AcceptClient()
         {
-            TcpClient clientSocket = default(TcpClient);
-            clientSocket = server.AcceptTcpClient();
-            Console.WriteLine("Connected");
-            NetworkStream stream = clientSocket.GetStream();
-            client = new Client(stream, clientSocket);
+            while (true)
+            {
+                TcpClient clientSocket = default(TcpClient);
+                clientSocket = server.AcceptTcpClient();
+                Console.WriteLine("Connected");
+                NetworkStream stream = clientSocket.GetStream();
+                client = new Client(stream, clientSocket);
+            }
+
+        }
+        public void AddNewClient(Client client)
+        {
+            Thread addClient = new Thread(() => AddNewClient(client));
+
         }
         private void Respond(string body)
         {

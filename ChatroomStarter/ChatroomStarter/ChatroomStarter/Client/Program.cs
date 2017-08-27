@@ -10,9 +10,9 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            Client client = new Client("12.145.176.90", 1900);
+            Client client = new Client("127.0.0.1", 9999);
             client.Send();
-            client.Recieve();
+            client.Receive();
             Console.ReadLine();
         }
     }
