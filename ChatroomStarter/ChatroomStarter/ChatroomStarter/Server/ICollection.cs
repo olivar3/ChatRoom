@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-   public class Program
+    public interface ICollection
     {
-        static void Main(string[] args)
-        {
-            new Server().Run();
-            Console.ReadLine();
-        }
+        void ICollection(string input);
     }
 }

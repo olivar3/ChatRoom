@@ -8,9 +8,10 @@ namespace Client
 {
     public static class UI
     {
+        public static string message;
         public static void DisplayMessage(string message)
         {
-            Console.WriteLine(message);
+            Console.WriteLine(message);                                             
         }
         public static string GetInput()
         {

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    class Server
+    public class Server
     {
         public static Client client;
         TcpListener server;
@@ -25,7 +25,8 @@ namespace Server
             string message = client.Recieve();
             Respond(message);
         }
-        private void AcceptClient()
+        private void AcceptClient()// is going to have a thread that adds a client
+
         {
             TcpClient clientSocket = default(TcpClient);
             clientSocket = server.AcceptTcpClient();
@@ -37,5 +38,9 @@ namespace Server
         {
              client.Send(body);
         }
+        //private void broadcast
+        //{
+
+        //}
     }
 }
