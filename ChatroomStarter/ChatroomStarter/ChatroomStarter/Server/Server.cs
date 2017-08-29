@@ -11,22 +11,18 @@ using System.Threading.Tasks;
 namespace Server
 {
     public class Server
-<<<<<<< HEAD
+
     {
         public static Client client;
-=======
-    {       
-        Client client;
->>>>>>> refs/remotes/origin/master
         TcpListener server;
         public Server()
         {
-               
-                TcpListener server = new TcpListener(IPAddress.Parse("127.0.0.1"), 9999);
-                TcpClient client = default(TcpClient);
-                server.Start();
-                Console.WriteLine("Please wait for connection...");
-                
+
+            TcpListener server = new TcpListener(IPAddress.Parse("127.0.0.1"), 9999);
+            TcpClient client = default(TcpClient);
+            server.Start();
+            Console.WriteLine("Please wait for connection...");
+
 
             while (true)
             {
@@ -37,7 +33,7 @@ namespace Server
                 Console.ReadKey();
 
 
-             
+
             }
 
         }
@@ -56,7 +52,7 @@ namespace Server
                 clientSocket = server.AcceptTcpClient();
                 Console.WriteLine("Connected");
                 NetworkStream stream = clientSocket.GetStream();
-                client = new Client(stream, clientSocket);
+                Client client = new Client(stream, clientSocket);
             }
 
         }
@@ -67,7 +63,7 @@ namespace Server
         }
         private void Respond(string body)
         {
-             client.Send(body);
+            client.Send(body);
         }
         //private void broadcast
         //{

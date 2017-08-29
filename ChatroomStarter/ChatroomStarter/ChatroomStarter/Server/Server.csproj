@@ -44,12 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
-<<<<<<< HEAD
     <Compile Include="ICollection.cs" />
+    <Compile Include="IConnection.cs" />
     <Compile Include="ILogger.cs" />
-=======
-    <Compile Include="Dictionary.cs" />
->>>>>>> refs/remotes/origin/master
     <Compile Include="Message.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
