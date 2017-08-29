@@ -15,7 +15,7 @@ namespace Client
         public Client(string IP, int port)
         {
             clientSocket = new TcpClient();
-            clientSocket.Connect(IPAddress.Parse(IP), 9999);
+            clientSocket.Connect(IPAddress.Parse("127.0.0.1"), 9999);
             stream = clientSocket.GetStream();
         }
         public void Send()

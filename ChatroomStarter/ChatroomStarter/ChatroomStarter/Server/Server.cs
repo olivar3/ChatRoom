@@ -11,13 +11,30 @@ using System.Threading.Tasks;
 namespace Server
 {
     public class Server
-    {
+    {       
         Client client;
         TcpListener server;
         public Server()
         {
-            server = new TcpListener(IPAddress.Parse("127.0.0.1"), 9999);
-            server.Start();
+               
+                TcpListener server = new TcpListener(IPAddress.Parse("127.0.0.1"), 9999);
+                TcpClient client = default(TcpClient);
+                server.Start();
+                Console.WriteLine("Please wait for connection...");
+                
+
+            while (true)
+            {
+                Dictionary<string, Client> users = new Dictionary<string, Client>();
+                client = server.AcceptTcpClient();
+                Console.WriteLine("You are now connected!");
+                Console.WriteLine("Please enter a Username");
+                Console.ReadKey();
+
+
+             
+            }
+
         }
         public void Run()
         {
